@@ -14,9 +14,9 @@ git clone git@github.com:
 
 2. Dockerコンテナ起動
 
-、、、
+```bash
 docker-compose up -d –build
-、、、
+```
 
 ---
 
@@ -24,45 +24,45 @@ docker-compose up -d –build
 
 1. PHPコンテナに入る
 
-、、、
+```bash
 docker-compose exec php bash
-、、、
+```
 
 2. composerインストール
 
-、、、
+```bash
 composer install
-、、、
+```
 
 3. .env作成
 
-、、、
+```bash
 cp .env.example .env
-、、、
+```
 
 4. アプリケーションキー作成
 
-、、、
+```bash
 php artisan key:generate
-、、、
+```
 
 5. マイグレーション
 
-、、、
+```bash
 php artisan migrate
-、、、
+```
 
 6. シーディング
 
-、、、
+```bash
 php artisan db:seed
-、、、
+```
 
 7. storageリンク
 
-、、、
+```bash
 php artisan storage:link
-、、、
+```
 
 ---
 

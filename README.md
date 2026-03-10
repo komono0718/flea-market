@@ -76,12 +76,6 @@ php artisan storage:link
 
 ---
 
-# ER図
-
-
-
----
-
 # URL
 
 - 開発環境：http://localhost/

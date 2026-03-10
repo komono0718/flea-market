@@ -10,7 +10,7 @@ Laravelを使用して作成したフリマアプリです。
 ## Dockerビルド
 
 1. リポジトリをクローン
-git clone git@github.com:git@github.com:komono0718/flea-market.git
+git clone git@github.com:komono0718/flea-market.git
 
 2. Dockerコンテナ起動
 

@@ -1,27 +1,49 @@
-<h1>商品一覧</h1>
+@extends('layouts.app')
 
-@if (Auth::check())
-    <p style="color:green;">ログイン中（ID: {{ Auth::id() }}）</p>
-@else
-    <p style="color:red;">未ログイン</p>
-@endif
+@section('content')
 
-@foreach ($items as $item)
-    <div style="margin-bottom:30px;">
-        <img src="{{ $item->img_url }}" width="200">
+<div class="container">
 
-        @if ($item->purchase)
-    <p style="color:red; font-weight:bold;">Sold</p>
-@endif
-
-        <p>
-            <a href="/item/{{ $item->id }}">
-                {{ $item->name }}
-            </a>
-            <a href="/">おすすめ</a>
-<a href="/?tab=mylist">マイリスト</a>
-        </p>
-
-        <p>¥{{ number_format($item->price) }}</p>
+    <div class="tabs-line">
+<a href="/?keyword={{ request('keyword') }}">おすすめ</a>
+<a href="/?tab=mylist&keyword={{ request('keyword') }}">マイリスト</a>
     </div>
-@endforeach
+
+    <div class="item-grid">
+        @foreach ($items as $item)
+
+            <a href="/item/{{ $item->id }}" class="item-card-link">
+
+                <div class="item-image-wrap" style="position:relative;">
+
+                    {{-- SOLD表示 --}}
+                    @if ($item->purchase)
+                        <div style="
+                            position:absolute;
+                            top:10px;
+                            left:10px;
+                            background:red;
+                            color:white;
+                            padding:4px 10px;
+                            font-size:12px;
+                            font-weight:bold;
+                            z-index:10;
+                        ">
+                            SOLD
+                        </div>
+                    @endif
+
+                    <img src="{{ asset('storage/' . $item->img_url) }}" alt="{{ $item->name }}">
+
+                </div>
+
+                <div class="item-name">{{ $item->name }}</div>
+
+            </a>
+
+        @endforeach
+    </div>
+
+</div>
+
+@endsection

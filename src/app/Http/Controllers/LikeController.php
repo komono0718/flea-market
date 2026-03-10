@@ -14,17 +14,17 @@ class LikeController extends Controller
 
         $userId = Auth::id();
 
-$like = Like::where('item_id', $item->id)
-    ->where('user_id', $userId)
-    ->first();
+        $like = Like::where('item_id', $item->id)
+            ->where('user_id', $userId)
+            ->first();
 
-if ($like) {
-    $like->delete();
-} else {
-    Like::create([
-        'item_id' => $item->id,
-        'user_id' => $userId,
-    ]);
+        if ($like) {
+            $like->delete();
+        } else {
+            Like::create([
+                'item_id' => $item->id,
+                'user_id' => $userId,
+            ]);
         }
 
         return back();

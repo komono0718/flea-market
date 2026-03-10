@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-protected $fillable = [
-    'item_id',
-    'user_id',
-];
+    protected $fillable = [
+        'item_id',
+        'user_id',
+    ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\App\Models\User::class);
     }
 
     public function item()
     {
-        return $this->belongsTo(Item::class);
+        return $this->belongsTo(\App\Models\Item::class);
     }
 }

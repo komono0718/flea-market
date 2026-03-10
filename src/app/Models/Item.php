@@ -29,16 +29,16 @@ class Item extends Model
 
     public function likes()
     {
-        return $this->hasMany(Like::class);
+        return $this->hasMany(\App\Models\Like::class);
     }
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(\App\Models\Comment::class);
     }
 
     public function purchase()
     {
-        return $this->hasOne(Purchase::class);
+        return $this->hasOne(\App\Models\Purchase::class)->where('status', 'paid');
     }
 }

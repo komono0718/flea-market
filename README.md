@@ -15,7 +15,7 @@ git clone git@github.com:komono0718/flea-market.git
 2. Dockerコンテナ起動
 
 ```bash
-docker-compose up -d –-build
+docker compose up -d –-build
 ```
 
 ---
@@ -25,7 +25,7 @@ docker-compose up -d –-build
 1. PHPコンテナに入る
 
 ```bash
-docker-compose exec php bash
+docker compose exec php bash
 ```
 
 2. composerインストール

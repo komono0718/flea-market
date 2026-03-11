@@ -15,7 +15,7 @@ git clone git@github.com:komono0718/flea-market.git
 2. Dockerコンテナ起動
 
 ```bash
-docker-compose up -d –build
+docker-compose up -d –-build
 ```
 
 ---
